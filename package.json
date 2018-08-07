@@ -1,0 +1,47 @@
+{
+  "name": "autotoolskolomna",
+  "version": "1.0.0",
+  "description": "Car tools store website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "autotoolskolomna"
+  },
+  "keywords": [
+    "car",
+    "tool",
+    "auto",
+    "special",
+    "set",
+    "tools",
+    "pneumatics",
+    "hydraulics"
+  ],
+  "author": "Elena V.",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-babel-minify": "^0.4.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-json-editor": "^2.4.1",
+    "gulp-remove-html-comments": "^1.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "jasmine-core": "^3.1.0",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1"
+  }
+}
