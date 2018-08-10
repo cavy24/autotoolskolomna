@@ -1,0 +1,41 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+
+.bg_blue
+  max-width: 100%
+  background-image: url('/img/bg_blue.png')
+  
+@media screen and (max-width: 479px)
+  .bg_blue
+    max-width: 479px
+
+@media screen and (min-width: 480px) and (max-width: 639px)
+  body
+    max-width: 639px
+
+  .burger
+    display: none
+
+@media screen and (min-width: 640px) and (max-width: 800px)
+  body
+    max-width: 800px
+
+  .burger
+    display: none
+
+@media screen and (min-width: 801px) and (max-width: 1024px)
+  body
+    max-width: 1024px
+
+  .burger
+    display: none
+
+@media screen and (min-width: 1025px)
+  body
+    max-width: 1366px
+
+  .burger
+    display: none
