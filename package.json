@@ -2,13 +2,14 @@
   "name": "autotoolskolomna",
   "version": "1.0.0",
   "description": "Car tools store website",
+  "content_security_policy": "unsafe-inline",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "autotoolskolomna"
+    "url": "https://github.com/cavy24/autotoolskolomna"
   },
   "keywords": [
     "car",

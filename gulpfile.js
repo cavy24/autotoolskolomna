@@ -7,12 +7,10 @@ let gulp = require('gulp'),
   BS = require('browser-sync'),
   cssMinify = require('gulp-csso'),
   babel = require('gulp-babel'),
-  babelMinify = require('gulp-babel-minify'),
   concat = require('gulp-concat'),
   imageMin = require('gulp-imagemin'),
-  removeHtmlComments = require('gulp-remove-html-comments'),
-  jeditor = require('gulp-json-editor');
-
+  removeHtmlComments = require('gulp-remove-html-comments');
+ 
   gulp.task('default', ['delFiles', 'html', 'sass', 'js', 'imageMin', 'slick', 'watchFiles', 'myServer'], function () {
     console.log('Project is ready!');
   });
@@ -22,13 +20,13 @@ let gulp = require('gulp'),
   });
   
   gulp.task('html', function () {
-    gulp.src(['./app/pages/**/*.html']) //все файлы html
+    gulp.src('./app/pages/**/*.html') //все файлы html
       .pipe(concat('index.html')) //склеиваем файлы в index.html
       .pipe(htmlMin({ //сжимаем
         collapseWhitespace: true //удаляем пробелы
       }))
       .pipe(removeHtmlComments()) //удаляем комм-ты
-      .pipe(gulp.dest('./dist/html')); //размещаем в дир-рии dist
+      .pipe(gulp.dest('./dist')); //размещаем в дир-рии dist
   
     BS.reload({ //перезагрузка страницы в случае внесения изменений в файл index.html
       stream: false
@@ -36,12 +34,10 @@ let gulp = require('gulp'),
   });
   
   gulp.task('sass', function () {
-    //gulp.src('./app/sass/**/*.sass') // все файлы .sass
-    //gulp.src(['./app/css/style.css']) //один файл
-    gulp.src('./app/pages/**/*.sass')
+      gulp.src('./app/pages/**/*.sass')
       .pipe(sass()) // конвертируем sass в css
       .pipe(concat('main.css')) //склеиваем файлы main.css
-      //.pipe(gulp.dest('./dist/css')) //размещаем в дир-рии dist
+      .pipe(gulp.dest('./dist/css')) //размещаем в дир-рии dist
       .pipe(cssMinify()) //сжимаем файл main.css
       .pipe(rename({
         suffix: '.min' // добавляем к названию суффикс, переписываем src в index.html = "css/main.min.css"
@@ -59,7 +55,7 @@ let gulp = require('gulp'),
         "presets": ["env"]
       })) //Для ES6
       .pipe(concat('main.js'))
-      //.pipe(gulp.dest('./dist/js'))
+      .pipe(gulp.dest('./dist/js'))
       .pipe(uglifyJs())
       .pipe(rename({
         suffix: '.min' //переписываем src в index.html = "js/main.min.js"
