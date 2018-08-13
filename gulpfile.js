@@ -11,7 +11,7 @@ let gulp = require('gulp'),
   imageMin = require('gulp-imagemin'),
   removeHtmlComments = require('gulp-remove-html-comments');
  
-  gulp.task('default', ['delFiles', 'html', 'sass', 'js', 'imageMin', 'slick', 'watchFiles', 'myServer'], function () {
+  gulp.task('default', ['delFiles', 'html', 'sass', 'js', 'imageMin', 'svg', 'fonts', 'slick', 'watchFiles', 'myServer'], function () {
     console.log('Project is ready!');
   });
   
@@ -20,7 +20,7 @@ let gulp = require('gulp'),
   });
   
   gulp.task('html', function () {
-    gulp.src('./app/pages/**/*.html') //все файлы html
+    gulp.src('./app/**/*.html') //все файлы html
       .pipe(concat('index.html')) //склеиваем файлы в index.html
       .pipe(htmlMin({ //сжимаем
         collapseWhitespace: true //удаляем пробелы
@@ -73,6 +73,16 @@ let gulp = require('gulp'),
       .pipe(gulp.dest('dist/img'))
   });
 
+  gulp.task('svg', function () {
+    gulp.src('./app/svg/*')
+      .pipe(gulp.dest('dist/svg'))
+  });
+
+  gulp.task('fonts', function () {
+    gulp.src('./app/fonts/*')
+     .pipe(gulp.dest('dist/fonts'))
+  });
+
   gulp.task('slick', function () {
     gulp.src('./app/slick/*') // все файлы
       .pipe(gulp.dest('./dist/slick')); //размещаем в дир-рии dest/
@@ -83,9 +93,11 @@ let gulp = require('gulp'),
   });
   
   gulp.task('watchFiles', function () {
-    gulp.watch('./app/pages/**/*.html', ['html']);
+    gulp.watch('./app/**/*.html', ['html']);
     gulp.watch('./app/pages/**/*.sass', ['sass']);
     gulp.watch('./app/pages/**/*.js', ['js']);
+    gulp.watch('./app/img/*', ['imageMin']);
+    gulp.watch('./app/svg/*', ['svg']);
   });
   
   gulp.task('myServer', function () {
