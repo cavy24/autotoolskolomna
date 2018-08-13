@@ -1,16 +1,42 @@
+@font-face
+  font-family: 'Gunia'
+  font-style: normal
+  font-weight: 700
+  src: local('Gunia')
+  src: url('../fonts/Gunia.woff2') format('woff2'),
+  url('../fonts/Gunia.woff') format('woff'),
+  url('../fonts/Gunia.ttf') format('truetype')
+
 *
   margin: 0
   padding: 0
   box-sizing: border-box
 
-
-.bg_blue
+body
   max-width: 100%
-  background-image: url('/img/bg_blue.png')
+  background-image: url('../img/bg_blue.png')
+
+.name_company 
+  color: rgb(255,255,255)
+  font-family: 'Gunia', Verdana, Geneva, Tahoma, sans-serif
+  text-align: left
+
   
 @media screen and (max-width: 479px)
-  .bg_blue
+  .body
     max-width: 479px
+
+  .logo
+    margin-top: 75px
+    margin-left: 20px
+      
+  .svg_logo
+    height: 24px
+    width: 18px
+
+  .name_company
+    font-size: 2.5rem
+    padding-left: 80px
 
 @media screen and (min-width: 480px) and (max-width: 639px)
   body
