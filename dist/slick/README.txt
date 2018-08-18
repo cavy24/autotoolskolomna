@@ -1,0 +1,1 @@
+C:\Biblioteca\УЧЁБА\Веб-разработчик\JS_lev.2\файлы к уроку 7\dz7\app\slick

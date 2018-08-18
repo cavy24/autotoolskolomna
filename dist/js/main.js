@@ -14,8 +14,8 @@ function ready() {
 };
 'use strict';
 
-var burger = document.getElementById('#burger-button');
-var navBurger = document.getElementById('#nav-burger');
+var burger = document.getElementById('burger-button');
+var navBurger = document.getElementById('nav-burger');
 burger.addEventListener('click', function (event) {
   event.preventDefault();
   navBurger.classList.toggle('open');

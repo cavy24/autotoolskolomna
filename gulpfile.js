@@ -34,9 +34,9 @@ let gulp = require('gulp'),
   });
   
   gulp.task('sass', function () {
-      gulp.src('./app/pages/**/*.sass')
+      gulp.src(['./app/sass/main.sass'])
       .pipe(sass()) // конвертируем sass в css
-      .pipe(concat('main.css')) //склеиваем файлы main.css
+      //.pipe(concat('main.css')) //склеиваем файлы main.css
       .pipe(gulp.dest('./dist/css')) //размещаем в дир-рии dist
       .pipe(cssMinify()) //сжимаем файл main.css
       .pipe(rename({
@@ -94,7 +94,7 @@ let gulp = require('gulp'),
   
   gulp.task('watchFiles', function () {
     gulp.watch('./app/**/*.html', ['html']);
-    gulp.watch('./app/pages/**/*.sass', ['sass']);
+    gulp.watch(['./app/sass/main.sass'], ['sass']);
     gulp.watch('./app/pages/**/*.js', ['js']);
     gulp.watch('./app/img/*', ['imageMin']);
     gulp.watch('./app/svg/*', ['svg']);
