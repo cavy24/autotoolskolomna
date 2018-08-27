@@ -1,5 +1,6 @@
 @import "variable"
 @import "../pages/main/burger_menu/burger_menu"
+@import "../pages/main/slider/slider.sass"
 
 @font-face
   font-family: 'Gunia'
@@ -14,22 +15,22 @@
   margin: 0
   padding: 0
   box-sizing: border-box
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: 'Gunia', Verdana, Geneva, Tahoma, sans-serif
 
 html,
 body 
   background-color: #ccc
-  height: 100%
- 
+  width: 100%
+   
 body
-  background-image: url(../img/bg_blue.png)
+  background: url(../img/bg_blue.png) no-repeat center
   background-size: cover
+  height: 100%
  
 body,   
 .container
   margin: 0 auto
-  width: 100%
-
+  
 .logo
   margin: 0 auto
   & a
@@ -41,15 +42,18 @@ body,
   float: left
   margin-right: 10px
 
+.name_company_slogan
+  font-family: cursive
+  font-style: italic
+
 .main_description,
 .main_description_range
-  margin: 0 auto
+  margin: 20px auto
   width: 93%
  
-.main_description
-   & img
+.main_description img
+    height: auto
     width: 100%
-    height: 100%
     border: 3px solid $main_color_white
 
 .name_company
@@ -59,21 +63,61 @@ body,
 .name_company,
 .main_description_name,
 .main_description_range_name,
-.main_description_range li a 
+.main_description_info,
+.main_description_range li a,
+.main_description_pluses_name,
+.name_company_slogan,
+.main_description_pluses_item_name,
+.main_description_pluses_item_p 
   color: $main_color_white
-  font-family: 'Gunia'
-  
+    
 .main_description_name
-  font-size: 1.9rem
+  font-size: 1.7 * $font_size
 
 .main_description_name,
-.main_description_range_name
+.main_description_range_name,
+.main_description_pluses_name
   font-style: italic
   text-align: center
-  margin: 20px
 
-.main_description_range_name
-   font-size: 1.7rem
+.main_description_name,
+.main_description_range_name,
+.main_description_pluses_name,
+.main_description_info,
+.main_description_pluses
+  margin: 30px auto
+
+.main_description_info,
+.main_description_pluses
+  width: 93%
+
+.main_description_info_recourse
+  display: block
+  padding-bottom: 15px
+
+.main_description_info_recourse,
+.main_description_pluses_item_name
+  text-align: center
+
+.main_description_info ul
+  list-style-position: inside
+  padding: 15px
+
+.main_description_info_description
+  text-align: justify
+  padding: 5px 0
+  & a
+    color: $main_color_white
+  & a:hover
+		  color: $color_hover
+  & a:active
+		  color: $color_active
+	  
+     
+.main_description_range_name,
+.main_description_pluses_name
+  font-size: 1.5 * $font_size
+  text-decoration-line: underline
 
 .main_description_range
   & li
@@ -82,15 +126,16 @@ body,
     margin: 15px auto
     padding: 15px
     width: 90%
-    -webkit-box-shadow: 2.5px 2.5px 5px 1.5px $main_color_grey
-    -moz-box-shadow: 2.5px 2.5px 5px 1.5px $main_color_grey
-    box-shadow: 2.5px 2.5px 5px 1.5px $main_color_grey
+    -webkit-box-shadow: 2.5px 2.5px 5px 1.5px darken($main_color_grey, 25%)
+    -moz-box-shadow: 2.5px 2.5px 5px 1.5px darken($main_color_grey, 25%)
+    box-shadow: 2.5px 2.5px 5px 1.5px darken($main_color_grey, 25%)
     & a
       display: block
       text-decoration: none
       color: $main_color_white
-      font-size: 1.35em
+      font-size: 1.2 * $font_size
     & img
+      border: 2px solid $main_color_white
       float: left
       margin-right: 15px
       width: 25px
@@ -99,43 +144,89 @@ body,
       -webkit-box-shadow: inset 2px 2px 2.5px 3px $main_color_grey
       -moz-box-shadow: inset 2px 2px 2.5px 3px $main_color_grey
       box-shadow: inset 2px 2px 2.5px 3px $main_color_grey
+ 
+.clr
+  clear: both
+
+.main_description_pluses
+  margin: 20px auto
+  width: 92%
+
+.main_description_pluses_item_name
+  margin: 20px auto
+
+.main_description_pluses_img_out
+  width: 115px
+  height: 115px
+  border-color: darken($main_color_grey, 20%)
+  border-style: solid
+  border-width: 4px
+  margin: 10px
+  float: left
+
+.main_description_pluses_img_in
+  width: 107px
+  height: 107px
+  background-color: darken($main_color_grey, 5%)
+  text-align: center
+  & img
+    margin-top: 15px
+    width: 70px
+    height: 70px
+
+.main_description_pluses_img_out,
+.main_description_pluses_img_in
+  border-radius: 50%
+
+.main_description_pluses_item_p
+  margin: 35px auto
+  font-size: 1.2 * $font_size
+
+.main_description_pluses_item_name
+  font-size: 1.3 * $font_size
+
+.footer
+    background: url(../img/bg_footer.png) no-repeat center
+    background-size: cover
+    height: 357px
 
 @media screen and (max-width: 480px)
   
   .logo
     width: 95%
     padding: 25px 10px 0 20px
-    
-  .clr
-    clear: both
 
+  .name_company_slogan
+    font-size: .9 * $font_size
+    line-height: .8 * $font_size
+ 
   .name_company
-    font-size: 2rem
+    font-size: 2.5 * $font_size
+
+  .main_description_info
+    font-size: $font_size
+
+  .main_description img
+    max-width: 480px
     
 @media screen and (min-width: 481px) and (max-width: 639px)
-  body
-    max-width: 639px
-
+ 
   .burger
     display: none
 
 @media screen and (min-width: 640px) and (max-width: 800px)
-  body
-    max-width: 800px
-
+  
   .burger
     display: none
 
 @media screen and (min-width: 801px) and (max-width: 1024px)
-  body
-    max-width: 1024px
-
+  
   .burger
     display: none
 
 @media screen and (min-width: 1025px)
-  body
-    max-width: 1366px
-
+  
   .burger
     display: none
+
+

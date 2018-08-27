@@ -1,0 +1,89 @@
+.main_description_examples
+  margin: 20px auto
+  width: 93%
+  position: relative
+  & .main_description_examples_name
+    color: $main_color_white
+    margin: 30px auto
+    font-style: italic
+    text-align: center
+    text-decoration-line: underline
+  & img
+    width: 100%
+    height: auto
+    border: 3px solid $main_color_white
+  & .main_description_examples_slider
+    position: relative
+    & .arrow-left
+      background: url('../img/slider_arrow_left.png') no-repeat center
+      left: 3%
+    & .arrow-right
+      background: url('../img/slider_arrow_right.png') no-repeat center
+      right: 3%
+    & .arrow-left,
+    & .arrow-right
+      width: 40px
+      height: 40px
+      position: absolute
+      top: 50%
+      background-color: $color_items
+      border-radius: 50%
+      border: 3px solid $main_color_grey
+    & .arrow-left:hover,
+    & .arrow-right:hover
+      border: 3px solid $color_hover
+  & .main_description_examples_points
+    position: absolute
+    width: 100%
+    text-align: center
+    padding: 0
+    bottom: 20px
+    left: 0
+    & li
+      display: inline-block
+      margin: .5 * $font_size
+      & a
+        margin: 0
+        display: block
+        height: 15px
+        width: 15px
+        border: 1px solid $main_color_grey
+        border-radius: 50%
+        background-color: transparent
+        text-indent: 100%
+        white-space: nowrap
+        overflow: hidden
+      & a[href="#slider_1"]
+        background: $main_color_grey
+        border: 1px solid $main_color_grey
+        border-radius: 50%
+        height: 15px
+        width: 15px
+
+//#slider_1:target~ul li a[href="#slider_1"],
+//#slider_2:target~ul li a[href="#slider_2"],
+//#slider_3:target~ul li a[href="#slider_3"],
+//#slider_4:target~ul li a[href="#slider_4"],
+//#slider_5:target~ul li a[href="#slider_5"],
+//#slider_6:target~ul li a[href="#slider_6"] 
+	//background: $main_color_grey
+	//border: 1px solid #ccc
+	//border-radius: 50%
+	//height: 15px
+	//width: 15px
+  
+//#slider_2:target~ul li a[href="#slider_1"],
+//#slider_3:target~ul li a[href="#slider_1"],
+//#slider_4:target~ul li a[href="#slider_1"],
+//#slider_5:target~ul li a[href="#slider_1"],
+//#slider_6:target~ul li a[href="#slider_1"]
+	//background: transparent        
+
+@media screen and (max-width: 480px)
+
+  .main_description_examples_name
+    font-size: 1.5 * $font_size
+
+  .main_description_examples img
+    max-width: 480px
+ 

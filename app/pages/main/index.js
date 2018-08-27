@@ -10,3 +10,4 @@ function ready() {
   document.createElement('details');
   document.createElement('summary');
 };
+showSlides();
