@@ -4,148 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Autotools-Kolomna - Главная</title>
+  <title>AVTools-Kolomna - Главная</title>
   <link rel="stylesheet" href="css/main.min.css">
   
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <div class="logo" role="banner">
-        <a href="#">
-          <div class="svg_logo">
-            <object data="svg/logo.svg" type="image/svg+xml">
-              <img alt="Autotools" src="img/logo.png">
-            </object>
-          </div>
-            <h1 class="name_company">Autotools</h1>
-            <p class="name_company_slogan">Работа должна приносить удовольствие!</p>
-        </a>
-      
-    </div>
-    <div class="clr"></div>
-    <div class="navigation" role="navigation">
-      <div id = "nav-burger" class="nav_burger">
-      <nav class="burger">
-        <a href="#" class="burger__button" id="burger-button">
-      <span class="burger__button__icon"></span>
-    </a>
-      <ul class="burger__menu">
-         <li><a href="#">Главная</a></li>
-         <li><a href="#">О нас</a></li>
-         <li><a href="#">Каталог</a></li>
-         <li><a href="#">Контакты</a></li>
-         <li><a href="#">Новости</a></li>
-      </ul>
-        </nav>
-      </div>  
-    </div>
-  </header>
+    //= template/header.html
   <div class="main" role="main">
     <div class="main_description">
       <h2 role = "heading" class="main_description_name">Магазин инструмента для ремонта автомобилей</h2>
-      <img src="img/tools.jpg" alt="Наш ассортимент">
+      <a href="#"><img src="img/tools.jpg" alt="Наш ассортимент"></a>
+      <input class = "btn_main" id = "btn_catalog" type ="button" name="submit" value="ПЕРЕЙТИ В КАТАЛОГ">
       <div class = "main_description_info">
-        <span class="main_description_info_recourse">Уважаемые автомастера и автолюбители!</span><p class = "main_description_info_description">Рады сообщить вам, что теперь машину можно чинить не только с помощью кувалды и той самой матери. Придумано и выпущено множество всяких полезных приспособлений, способных облегчить вашу работу.</p>
-        <p class = "main_description_info_description">А если серьёзно, каждый из нас сталкивался с проблемами: <ul><li>"не знаю, чем открутить",</li> <li>"надо как-то зафиксировать",</li><li>"сломался болт"</li></ul> и т.д. Не обязательно что-то изобретать, всё уже есть. Осталось только подобрать.</p>
-        <p class = "main_description_info_description">Посмотреть весь ассортимент можно в <a href = "#">Каталоге</a> или ниже на этой странице. Нет времени? Не нашли нужный инструмент? Напишите нам или закажите обратный звонок на странице  <a href="#">Контакты.</a></p>
-</div> 
+        <p class="main_description_info_recourse">Уважаемые автомастера и автолюбители!</p><p class = "main_description_info_description">Рады сообщить вам, что теперь машину можно чинить не только с помощью кувалды и той самой матери. Придумано и выпущено множество всяких полезных приспособлений, способных облегчить вашу работу.</p>
+        <p class = "main_description_info_description">А если серьёзно, каждый из нас сталкивался с проблемами:</p><ul><li>непонятно, чем это открутить;</li> <li>надо как-то зафиксировать;</li><li>сломался болт, как вытащить</li></ul>
+        <p class = "main_description_info_description">и т.д. Необязательно что-то изобретать, всё уже есть. Осталось только подобрать.</p>
+      </div>
       </div>
       <div class="main_description_examples">
         <h3 class="main_description_examples_name">Что интересного?</h3>
         <div class = "main_description_examples_slider">
-            <div class="arrow-left" id="arrow_right">
-            </div>
-            <div class="arrow-right" id="arrow_left">
-            </div>
-        <a href="#"><img id="slider_1" class = "active slide" src="img/fiksator_raspredvala_vag_T10171a.png" alt="fiksator_raspredvala_vag_1.4_1.6_tsi_fsi_T10171a" title="Фиксатор распредвала VAG 1.4/1.6 TSI/FSI T10171a"></a>
-        <a href="#"><img id="slider_2" class = "slide" src="img/nabor_golovok_s_pyatikonechnimy_vstavkami.png" alt="nabor_golovok_s_pyatikonechnimy_vstavkami_th" title="Набор головок 1/4 с 5-тиконечными вставками TH"></a>
-        <a href="#"><img id="slider_3" class = "slide" src="img/nabor_fiksatorov_dlya_bmw_mini_ep6.png" alt="nabor_fiksatorov_dlya_bmw_mini_psa" title="Набор Фиксаторов для ГРМ BMW, Mini, PSA"></a>
-        <a href="#"><img id="slider_4" class = "slide" src="img/nabor_instrumenta_jtc_h085c-b72.png" alt="nabor_instrumenta_1_4_and_1_2_85_predmetov" title="Набор инструмента 1/4 и 1/2 85 предметов"></a>
-        <a href="#"><img id="slider_5" class = "slide" src="img/prisposoblenie_dlya_vdavlivaniya_porchney_tormoznih_zilindrov.png" alt="prisposoblenie_dlya_vdavlivaniya_porchney_tormoznih_zilindrov" title="Приспособление для вдавливания поршней тормозных цилиндров"></a>
-        <a href="#"><img id="slider_6" class = "slide" src="img/nabor_bit_vseh_profiley_58_predmetov.png" alt="nabor_bit_vseh_profiley_58_predmetov" title="Набор бит 10 мм пяти профилей, 58 предметов"></a></div>
-          <ul class="main_description_examples_points">
-            <li><a href="#slider_1"></a></li>
-            <li><a href="#slider_2"></a></li>
-            <li><a href="#slider_3"></a></li>
-            <li><a href="#slider_4"></a></li>
-            <li><a href="#slider_5"></a></li>
-            <li><a href="#slider_6"></a></li>
-            <li></li>
-          </ul>
+          <div class="arrow-left" id="arrow_left"></div>
+          <div class="arrow-right" id="arrow_right"></div>
+          <div id = "div_slider">
+            <div class = "main_description_examples_slider_div">
+              <div  id="slider_1" class = "main_description_examples_slider_div_slider"><a href="#"><img class = "active" src="img/fiksator_raspredvala_vag_T10171a.png" alt="fiksator_raspredvala_vag_1.4_1.6_tsi_fsi_T10171a" title="Фиксатор распредвала VAG 1.4/1.6 TSI/FSI T10171a"></a></div>
+          <div id="slider_2"  class = "main_description_examples_slider_div_slider"><a href="#"><img class = "" src="img/nabor_golovok_s_pyatikonechnimy_vstavkami.png" alt="nabor_golovok_s_pyatikonechnimy_vstavkami_th" title="Набор головок 1/4 с 5-тиконечными вставками TH"></a></div>
+          <div id="slider_3" class = "main_description_examples_slider_div_slider"><a href="#"><img class = "" src="img/nabor_fiksatorov_dlya_bmw_mini_ep6.png" alt="nabor_fiksatorov_dlya_bmw_mini_psa" title="Набор Фиксаторов для ГРМ BMW, Mini, PSA"></a></div>
+          <div id="slider_4" class = "main_description_examples_slider_div_slider"><a href="#"><img class = "" src="img/nabor_instrumenta_jtc_h085c-b72.png" alt="nabor_instrumenta_1_4_and_1_2_85_predmetov" title="Набор инструмента 1/4 и 1/2 85 предметов"></a></div>
+          <div id="slider_5" class = "main_description_examples_slider_div_slider"><a href="#"><img class = "" src="img/prisposoblenie_dlya_vdavlivaniya_porchney_tormoznih_zilindrov.png" alt="prisposoblenie_dlya_vdavlivaniya_porchney_tormoznih_zilindrov" title="Приспособление для вдавливания поршней тормозных цилиндров"></a></div>
+          <div id="slider_6" class = "main_description_examples_slider_div_slider"><a href="#"><img class = "" src="img/nabor_bit_vseh_profiley_58_predmetov.png" alt="nabor_bit_vseh_profiley_58_predmetov" title="Набор бит 10 мм пяти профилей, 58 предметов"></a></div>
+      </div>
+      </div>	  
+      <div class = "clr"></div>
+      <div class = "main_description_examples_slider_switch">
+            <ul>
+              <li class = "not_active_link"><span class = "li_on"></span>0</li>
+              <li class = "not_active_link">1</li>
+              <li class = "not_active_link">2</li>
+              <li class = "not_active_link">3</li>
+              <li class = "not_active_link">4</li>
+              <li class = "not_active_link">5</li>
+              
+            </ul>
+        </div>
+           </div>
          </div>
-       <div class="main_description_pluses">
-        <h3 class="main_description_pluses_name">Наши плюсы</h3>
-        <div class="main_description_pluses_item">
-            <article>
-              <h4 class="main_description_pluses_item_name">Отличное качество продукта</h4>
-              <div class="main_description_pluses_img_out">
-              <div class="main_description_pluses_img_in">
-            <img src="img/palez_vverh.png" alt="visokoye_kachestvo_instrumenta" title="Достойное качество по приемлемой цене">
-          </div>
-        </div>
-            <p class="main_description_pluses_item_p">Наш инструмент проверен временем и мастерами автосервисов. Производится на заводах Тайваня.</p>
-            </article>
-          </div>
-          <div class="clr"></div>
-        <div class="main_description_pluses_item">
-            <article>
-              <h4 class="main_description_pluses_item_name">Неплохая скорость доставки</h4>
-              <div class="main_description_pluses_img_out">
-                <div class="main_description_pluses_img_in">
-            <img src="img/dostavka.png" alt="bistraya_dostavka" title="Поставка раз в неделю">
-                </div></div>
-            <p class="main_description_pluses_item_p">Поставки инструмента раз в неделю. Если нужного товара нет в наличии, привезём под заказ.</p>
-            </article>
-        </div>
-        <div class="clr"></div>
-           <div class="main_description_pluses_item">
-                <article>
-                  <h4 class="main_description_pluses_item_name">Очень вежливый продавец</h4>
-                  <div class="main_description_pluses_img_out">
-                    <div class="main_description_pluses_img_in">
-                <img src="img/vezhliviy_prodavez_.png" alt="vezhliviy_prodavez" title="Очень вежливый продавец">
-                    </div></div>
-                <p class="main_description_pluses_item_p">Он подскажет, какой инструмент вам нужен. А при необходимости примет заказ и сообщит о сроках доставки.</p>
-                </article>
-              </div>
-              <div class="clr"></div>
-              <div class="main_description_pluses_item">
-                  <article>
-                    <h4 class="main_description_pluses_item_name">Скидки, бонусы, акции</h4>
-                    <div class="main_description_pluses_img_out">
-                      <div class="main_description_pluses_img_in">
-                  <img src="img/sales.png" alt="skidky" title="Скидки лояльным клиентам">
-                      </div></div>
-                  <p class="main_description_pluses_item_p">В нашем магазине действуют скидки для постоянных покупателей. Регулярно бывают акции и бонусы.</p>
-                  </article>
-                </div>
-                <div class="clr"></div>
-      </div>
-      <div class="main_description_range">
-        <h3 class = "main_description_range_name">Наш ассортимент</h3>
-        <ul>
-          <li><a href="#"><img src="img/kit_tools.png" alt="kit_tools" title="Наборы">Наборы инструментов</a></li>
-          <li><a href="#"><img src="img/keys.png" alt="keys" title="Ключи всех профилей">Ключи различных профилей</a></li>
-          <li><a href="#"><img src="img/golovky.png" alt="torzeviye_golovky" title="Торцевые головки с аксессуарами: переходники, удлинители, карданы">Торцевые головки и аксессуары</a></li>
-          <li><a href="#"><img src="img/bity.png" alt="bity_vstavky_otvertky" title="Биты, вставки, отвёртки, адаптеры, держатели">Биты, головки-биты, отвёртки</a></li>
-          <li><a href="#"><img src="img/treschotky.png" alt="treschotky_vorotky" title="Трещотки, воротки">Ручные трещотки и воротки</a></li>
-          <li><a href="#"><img src="img/kleschy.png" alt="kleschy_syomniky_stopor_kolez" title="Клещи, съёмники стопорных колец, плоскогубцы, длинногубцы, бокорезы, ручные тиски">Клещи и съёмники стоп. колец</a></li>
-          <li><a href="#"><img src="img/molotky.png" alt="molotky_zubila_vykolotky" title="Зубила, выколотки, метчики, плашки, молотки, кувалды">Ударно-режущий инструмент</a></li>
-          <li><a href="#"><img src="img/syomniki.png" alt="syomniki_universalyniye" title="Съёмники с лапами, съёмники-сепараторы, съёмники шаровых">Универсальные съёмники</a></li>
-          <li><a href="#"><img src="img/pnevmotools.png" alt="pnevmaticheskiy_instrument" title="Гайковёрты, трещотки, бор- и шлифмашинки, лобзики, ножи, молотки, пневморазъёмы, шланги и т.д">Пневматический инструмент</a></li>
-          <li><a href="#"><img src="img/speztools.png" alt="speztools" title="Установочные планки, фиксаторы колен- и распредвалов, съёмники масляных фильтров и форсунок, клещи для хомутов и шлангов, инструмент для тормозной и охладительной системы, тестеры, компрессометры и т.д">Специальный инструмент</a></li>
-          <li><a href="#"><img src="img/chinomontag.png" alt="chinomontagniye_materialy" title="Грузики набивные и самоклеящиеся, герметики, клеи, заплатки, инструмент">Материалы для шиномонтажа</a></li>
-          <li><a href="#"><img src="img/rem_komplecty.png" alt="remontniye_komplecty" title="Рем.комплекты для трещоток, воротков, пневмоинструмента">Ремонтные комплекты</a></li>
-        </ul>
-      </div>
-      
-      
+         <div class = "main_description_info">
+         <p class = "main_description_info_description">Посмотреть весь ассортимент можно в <a href = "#">Каталоге</a>. <br>Нет времени? Не нашли нужный инструмент? Напишите нам или закажите обратный звонок на странице  <a href="#">Контакты.</a></p>
+         </div>
     </div>
-    <footer role="contentinfo" class="footer">
-
-    </footer>
+    //= template/footer.html
   </div>
-<script src="js/main.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
