@@ -1,4 +1,5 @@
 let gulp = require('gulp'),
+  autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   uglifyJs = require('gulp-uglifyjs'),
   rename = require('gulp-rename'),
@@ -7,11 +8,14 @@ let gulp = require('gulp'),
   BS = require('browser-sync'),
   cssMinify = require('gulp-csso'),
   babel = require('gulp-babel'),
-  concat = require('gulp-concat'),
+  //concat = require('gulp-concat'),
   imageMin = require('gulp-imagemin'),
-  removeHtmlComments = require('gulp-remove-html-comments');
+  pngquant = require('imagemin-pngquant'),
+  removeHtmlComments = require('gulp-remove-html-comments'),
+  rigger = require('gulp-rigger'),
+  sourcemaps = require('gulp-sourcemaps');
  
-  gulp.task('default', ['delFiles', 'html', 'sass', 'js', 'imageMin', 'svg', 'fonts', 'slick', 'watchFiles', 'myServer'], function () {
+  gulp.task('default', ['delFiles', 'html', 'sass', 'js', 'imageMin', 'svg', 'fonts', 'php', 'watchFiles', 'server'], function () {
     console.log('Project is ready!');
   });
   
@@ -20,8 +24,8 @@ let gulp = require('gulp'),
   });
   
   gulp.task('html', function () {
-    gulp.src('./app/**/*.html') //все файлы html
-      .pipe(concat('index.html')) //склеиваем файлы в index.html
+    gulp.src(['./app/index.html'], ['./app/thank_form.html'], ['./app/thank_newsletter.html']) //все файлы html
+      .pipe(rigger())
       .pipe(htmlMin({ //сжимаем
         collapseWhitespace: true //удаляем пробелы
       }))
@@ -35,13 +39,21 @@ let gulp = require('gulp'),
   
   gulp.task('sass', function () {
       gulp.src(['./app/sass/main.sass'])
+      .pipe(sourcemaps.init())
       .pipe(sass()) // конвертируем sass в css
       //.pipe(concat('main.css')) //склеиваем файлы main.css
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest('./dist/css')) //размещаем в дир-рии dist
+      .pipe(sourcemaps.init())
       .pipe(cssMinify()) //сжимаем файл main.css
       .pipe(rename({
         suffix: '.min' // добавляем к названию суффикс, переписываем src в index.html = "css/main.min.css"
       }))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest('./dist/css')); //размещаем в дир-рии dist файл main.min.css
   
     BS.reload({ //перезагрузка страницы в случае внесения изменений в файлы .css
@@ -50,16 +62,18 @@ let gulp = require('gulp'),
   });
   
   gulp.task('js', function () {
-    gulp.src('./app/pages/**/*.js')
+    gulp.src(['./app/js/main.js'])
+      .pipe(rigger())
       .pipe(babel({
         "presets": ["env"]
       })) //Для ES6
-      .pipe(concat('main.js'))
       .pipe(gulp.dest('./dist/js'))
+      .pipe(sourcemaps.init())
       .pipe(uglifyJs())
       .pipe(rename({
-        suffix: '.min' //переписываем src в index.html = "js/main.min.js"
+      suffix: '.min' //переписываем src в index.html = "js/main.min.js"
       }))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest('./dist/js'));
   
     BS.reload({
@@ -69,8 +83,13 @@ let gulp = require('gulp'),
   
   gulp.task('imageMin', function () {
     gulp.src('./app/img/*')
-      .pipe(imageMin())
-      .pipe(gulp.dest('dist/img'))
+      .pipe(imageMin({ //Сожмем их
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()],
+      interlaced: true
+      }))
+      .pipe(gulp.dest('./dist/img'))
   });
 
   gulp.task('svg', function () {
@@ -80,27 +99,23 @@ let gulp = require('gulp'),
 
   gulp.task('fonts', function () {
     gulp.src('./app/fonts/*')
-     .pipe(gulp.dest('dist/fonts'))
+     .pipe(gulp.dest('./dist/fonts'))
   });
 
-  gulp.task('slick', function () {
-    gulp.src('./app/slick/*') // все файлы
-      .pipe(gulp.dest('./dist/slick')); //размещаем в дир-рии dest/
-  
-    BS.reload({
-      stream: false
-    });
+  gulp.task('php', function () {
+    gulp.src('./app/**/*.php')
+     .pipe(gulp.dest('./dist'))
   });
   
   gulp.task('watchFiles', function () {
-    gulp.watch('./app/**/*.html', ['html']);
+    gulp.watch(['./app/**/index.html'], ['html']);
     gulp.watch(['./app/sass/main.sass'], ['sass']);
-    gulp.watch('./app/pages/**/*.js', ['js']);
+    gulp.watch(['./app/js/main.js'], ['js']);
     gulp.watch('./app/img/*', ['imageMin']);
     gulp.watch('./app/svg/*', ['svg']);
   });
   
-  gulp.task('myServer', function () {
+  gulp.task('server', function () {
     BS({
       server: {
         baseDir: './dist'
@@ -118,5 +133,17 @@ let gulp = require('gulp'),
     BS.reload({ //перезагрузка страницы в случае внесения изменений в файл basket_get.json
       stream: false
     });
-  });*/
+  });
+  
+  
+  gulp.task('slick', function () {
+    gulp.src('./app/slick/*') // все файлы
+      .pipe(gulp.dest('./dist/slick')); //размещаем в дир-рии dest/
+  
+    BS.reload({
+      stream: false
+    });
+  });
+
+  */
   
