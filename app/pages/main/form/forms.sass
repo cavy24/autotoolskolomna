@@ -1,0 +1,37 @@
+.footer_common_newsletter
+  float: left
+.footer_common_form
+  float: right
+  & .footer_common_form_message
+    height: 6em
+    font-family: Verdana,Geneva,Tahoma,sans-serif
+
+.footer_common_newsletter_input
+  width: 90%
+  height: 2em
+  background-color: $bg_color_form
+  border: none
+  border-radius: $border-radius
+  box-shadow: $box_shadow_inset
+  margin: 3% 0
+  padding: 5%
+  color: $color_input_text
+  text-overflow: ellipsis
+
+input::placeholder,
+textarea::placeholder
+  font-size: .9 * $font_size
+  color: rgba( 231, 232, 234, 0.2 )
+  line-height: 1.429
+  transition: 0.5s
+input:focus::placeholder
+  font-size: .5 * $font_size
+  transform: translateY(-120%)
+.class_error
+  background-color: $bg_error
+.class_success
+  background-color: $bg_success
+.class_error,
+.class_success
+  font-weight: bolder
+  color: $main_color_white
