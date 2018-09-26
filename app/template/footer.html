@@ -1,0 +1,40 @@
+<footer role="contentinfo" class="footer">
+  <div class="footer_common">
+    <p class="footer_common_offer">Уважаемые посетители нашего сайта! Все указанные цены носят исключительно информационный характер и ни в коем случае не являются публичной офертой согласно положениям статьи 437 ГК РФ. За получением более точной информации о стоимости товаров обращайтесь, пожалуйста, в наш магазин.</p>
+  
+  <div class="footer_common_newsletter"><p class="footer_common_newsletter_p">Хотите быть в курсе всех новостей нашего магазина? Подписывайтесь!</p>
+
+    <form action="send_newsletter.php" method="POST">
+      <input type = "text" name = "user_name_newsletter" placeholder="Введите ваше имя *" class="footer_common_newsletter_input" id ="input_footer_newsletter_name" required>
+      <input type = "text" name = "user_email_newsletter" placeholder="Введите ваш e-mail *" class="footer_common_newsletter_input" id ="input_footer_newsletter_email" required>
+      <input class = "btn_footer" id = "btn_footer_newsletter" type ="submit" value="Подписаться">
+    </form>
+</div>
+  <div class="footer_common_form"><p class="footer_common_form_p">Есть вопросы, предложения, пожелания? Просто скучно? Пишите!</p>
+
+    <form action="send_form.php" method="POST">
+      <input type = "text" name = "user_name_form" placeholder="Введите ваше имя *" class="footer_common_newsletter_input" id ="input_footer_form_name" required>
+      <input type = "text" name = "user_tel_form" placeholder="Введите ваш телефон" class="footer_common_newsletter_input" id ="input_footer_form_tel">
+      <input type = "text" name = "user_email_form" placeholder="Введите ваш e-mail *" class="footer_common_newsletter_input" id ="input_footer_form_email" required>
+     <textarea name="user_message_form" id="textarea_footer_form_message" cols="30" rows="10" class="footer_common_newsletter_input footer_common_form_message" placeholder="Текст вашего сообщения"  required></textarea>
+      <input class = "btn_footer" id = "btn_footer_form" type ="submit" value="Отправить">
+    </form>
+
+  </div>
+  <div class="footer_common_sitemap">
+  <h4>Карта сайта</h4>
+  <ul>
+    <li><a href="#">О нас</a></li>
+    <li><a href="#">Каталог</a></li>
+    <li><a href="#">Контакты</a></li>
+    <li><a href="#">Новости</a></li>
+    <li><a href="#">Акции</a></li>
+  </ul>
+  </div>
+  <div class = "clr"></div>
+  <p class="footer_common_info">&copy; 2018.&nbsp;<a href="index.html"> AVTools.</a>
+  <a href="mailto:pmkn@mail.ru?subject=Обращение через сайт" target="_blank">&nbsp;&nbsp;&nbsp;<span class="span_for_link">Написать письмо</span></a>
+  <a href="tel:+79269568864" class="show_only_mobile">&nbsp;&nbsp;&nbsp;<span class="span_for_link">Позвонить</span></a></p>
+</div>
+
+</footer>
