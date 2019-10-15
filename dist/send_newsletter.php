@@ -1,6 +1,6 @@
 <?php 
 
-require_once('phpmailer/PHPMailerAutoload.php');
+require_once('phpmailer/PHPMailerAutoload.php');//require использовать только в целях разделения HTML-страниц на "шапки" и "подвалы".
 $mail_newsletter = new PHPMailer;
 
 $mail_newsletter->CharSet = 'utf-8';

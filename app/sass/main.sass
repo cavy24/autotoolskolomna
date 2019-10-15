@@ -1,6 +1,4 @@
 @import "variable"
-@import "../pages/main/burger_menu/burger_menu"
-@import "../pages/main/slider/slider.sass"
 
 @font-face
   font-family: 'Gunia'
@@ -15,64 +13,101 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+  
+html,
+body
+  background: url(../img/tools_min.png) repeat
+  background-color: #ccc
+  height: 100%
+  min-height: 1000px
+  width: 100%
   font-family: 'Gunia', Verdana, Geneva, Tahoma, sans-serif
 
-html,
-body 
-  background-color: #ccc
-  width: 100%
-   
-body
-  background: url(../img/bg_blue.png) no-repeat center
-  background-size: cover
-  height: 100%
- 
-body,   
+body,
+a
+  color: $main_color_white
+
+html
+  line-height: 1.15
+  -webkit-text-size-adjust: 100%
+
+.header
+  margin-bottom: 3.1em
+
 .container
+  background: rgb(43,43,60)
   margin: 0 auto
-  
+
+
+form
+  text-align: center
+ 
 .logo
-  margin: 0 auto
+  margin: 40px auto 0 70px
+  float: left
+  width: 40%
   & a
-    display: block
     height: 70px
     text-decoration: none
 
 .svg_logo
+  background: $main_color_white 
   float: left
-  margin-right: 10px
+  box-shadow: 3.5px 3px 2px $color_hover
 
 .name_company_slogan
   font-family: cursive
   font-style: italic
 
+.navigation
+  float: right
+  width: 50%
+  padding: 2.7em 1.2em 0 0
+  & .navigation_desktop ul li
+    list-style-type: none
+    float: left
+    line-height: 2em
+    border-radius: $border-radius
+    padding: 5px 10px
+    text-align: center
+    transition: background-color 300ms ease-out
+    &:hover
+      background-color: $main_color_grey
+    &:active
+      background-color: $main_color_grey
+    & a
+      text-decoration: none
+      &:hover
+        color: $color_hover
+        text-decoration: none
+      &:active
+        color: $color_active
+        text-decoration: none
+    
+   
 .main_description,
 .main_description_range
   margin: 20px auto
   width: 93%
- 
-.main_description img
-    height: auto
-    width: 100%
-    border: 3px solid $main_color_white
 
-.name_company
-  text-align: left
-  padding-top: 20px
+.main_description
+  text-align: center
+
+.main_description img
+  border: .2em solid $color_hover
 
 .name_company,
-.main_description_name,
-.main_description_range_name,
-.main_description_info,
-.main_description_range li a,
-.main_description_pluses_name,
-.name_company_slogan,
-.main_description_pluses_item_name,
-.main_description_pluses_item_p 
-  color: $main_color_white
+.name_company_slogan
+  line-height: 1.1em
+  padding-left: 90px
+  text-shadow: 2px 2.5px 2px $color_hover
+  
+.name_company_slogan
+  width: 300px
+  
     
 .main_description_name
-  font-size: 1.7 * $font_size
+  text-shadow: 1.5px 2px 1.5px $color_hover
 
 .main_description_name,
 .main_description_range_name,
@@ -85,34 +120,39 @@ body,
 .main_description_pluses_name,
 .main_description_info,
 .main_description_pluses
-  margin: 30px auto
+  margin: 1.7em auto
 
 .main_description_info,
 .main_description_pluses
   width: 93%
 
-.main_description_info_recourse
-  display: block
-  padding-bottom: 15px
-
-.main_description_info_recourse,
 .main_description_pluses_item_name
   text-align: center
+
+.main_description_info_recourse
+    padding-bottom: 15px
+    text-decoration-line: underline
+    font-size: 1.1 * $font_size
 
 .main_description_info ul
   list-style-position: inside
   padding: 15px
-
-.main_description_info_description
   text-align: justify
-  padding: 5px 0
+  
+.main_description_info_description
+  padding: .25em .5em
+  text-align: justify
   & a
     color: $main_color_white
   & a:hover
 		  color: $color_hover
   & a:active
 		  color: $color_active
-	  
+
+.main_description_examples
+  & .main_description_examples_slider
+    width: 70%
+    height: auto
      
 .main_description_range_name,
 .main_description_pluses_name
@@ -146,6 +186,15 @@ body,
       box-shadow: inset 2px 2px 2.5px 3px $main_color_grey
  
 .clr
+  clear: both
+  *zoom: 1
+
+.clr:before,
+.clr:after
+  content: " "
+  display: table
+
+.clr:after
   clear: both
 
 .main_description_pluses
@@ -186,47 +235,267 @@ body,
   font-size: 1.3 * $font_size
 
 .footer
-    background: url(../img/bg_footer.png) no-repeat center
-    background-size: cover
-    height: 357px
+    background: rgb(61,61,80)
+    & .footer_common
+      margin: 0 20px
+      padding: 20px 0
+      & .footer_common_info
+        & a:hover
+          color: $color_hover
+        & a:active
+          color: $color_active
+      & .footer_common_offer
+        font-size: .7 * $font_size
+        font-style: italic
+      & .footer_common_newsletter,
+      & .footer_common_form,
+      & .footer_common_sitemap
+        font-size: .8 * $font_size
+        margin: 4% 1%
+        width: 48%
+      & .footer_common_form .footer_common_form_p,
+      & .footer_common_newsletter .footer_common_newsletter_p
+        padding: 0 1.1em
+      & .footer_common_sitemap
+        margin-left: 16%
+        & ul li a:active
+          color: $color_active
+        & ul li a:hover
+          color: $color_hover
+        h4
+          padding: 5% 0
+        & ul
+          list-style-type: none
+          & li
+            padding: 1.15% 0
+      & .footer_common_info
+        font-size: .75 * $font_size
+        text-align: center
+        margin: 3% 0
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+        & .footer_common_info_slogan
+          font-style: italic
+        & a
+          text-decoration: none
+        & .span_for_link
+          text-decoration: underline
+
+.show_only_mobile
+    display: none
 
 @media screen and (max-width: 480px)
   
+  .navigation_desktop
+    display: none
+
   .logo
     width: 95%
-    padding: 25px 10px 0 20px
+    padding: 25px 10px 20px 20px
+    & .name_company_slogan
+      font-size: .6 * $font_size
 
   .name_company_slogan
-    font-size: .9 * $font_size
-    line-height: .8 * $font_size
- 
+    font-size: .75 * $font_size
+    line-height: .75 * $font_size
+
   .name_company
     font-size: 2.5 * $font_size
 
+  .main_description
+    & .main_description_name
+      margin: 0 auto 1.2em
+      font-size: 1.42 * $font_size
+
+  .main_description_info_description
+    font-size: .94 * $font_size
+
   .main_description_info
     font-size: $font_size
-
+    
   .main_description img
     max-width: 480px
-    
-@media screen and (min-width: 481px) and (max-width: 639px)
- 
-  .burger
+
+  .main_description_info ul
+    font-size: .94 * $font_size
+
+  .show_only_mobile
+    display: inline-block
+
+  .show_only_desktop
     display: none
 
-@media screen and (min-width: 640px) and (max-width: 800px)
-  
+  .footer
+    & .footer_common
+      & .footer_common_info
+        text-align: left
+    
+@media screen and (min-width: 481px) and (max-width: 640px)
+ 
+  .header
+    & .logo
+      padding: 2em 0 2em 2em
+      & .name_company
+        font-size: 1.9 * $font_size
+        padding-top: .45 * $font_size
+      & .name_company_slogan
+        font-size: .7 * $font_size
+    & .nav_burger
+      display: none
+    & .navigation
+      & .navigation_desktop
+        width: 12em
+        height: 5em
+        border: 2px dashed
+        border-radius: $border-radius
+        padding: .3em
+      & .navigation_desktop ul li
+        padding-right: .8em
+        padding-left: 0.3em
+      & .navigation_desktop ul li a
+        display: block
+      
+  .show_only_desktop
+    display: none
+
+  .main
+	  & .main_description
+		  & .main_description_name
+        font-size: 1.9 * $font_size
+        margin: 0 auto 1.2em
+    & .main_description_info
+      & .main_description_info_recourse
+        font-size: 1.6 * $font_size
+      & .main_description_info_description,
+      & ul
+        font-size: 1.1 * $font_size
+
+  .main_description_info_description
+    font-size: 1.1 * $font_size
+
+  .main_description_examples .main_description_examples_name
+    font-size: 1.7 * $font_size 
+      	
+
+@media screen and (min-width: 641px) and (max-width: 800px)
+
+  .header
+    & .logo
+      padding: 3em 1em 0 2em
+      width: 56%
+      & .name_company
+        line-height: 1.1 * $font_size
+        padding-top: .05 * $font_size
+        font-size: 3 * $font_size
+    & .name_company_slogan
+      font-size: .7 * $font_size
+    & .navigation
+      padding: 1.5em 1em 0 0
+      & .navigation_desktop ul li
+        padding: .25 * $font_size
+        margin-right: .3em
+        line-height: 1.3em
+        & a
+          text-decoration: underline
+          &:hover
+            text-decoration: none
+
+  .main
+    & .main_description
+      & .main_description_name
+        font-size: 2.4 * $font_size
+    & .main_description img
+      width: 88%
+      height: auto
+    & .main_description_info
+      & .main_description_info_recourse
+        font-size: 1.6 * $font_size
+      & .main_description_info_description,
+      & ul
+        font-size: 1.2 * $font_size
+    & .main_description_examples
+      width: 37 * $font_size
+      & .main_description_examples_name
+        font-size: 2.5 * $font_size
+
+  .footer
+    & .footer_common
+      & .footer_common_form .footer_common_form_p,
+      & .footer_common_newsletter .footer_common_newsletter_p
+        font-size: medium
+      & .footer_common_sitemap
+        h4
+          padding: 2% 0
+      & .footer_common_info
+        font-size: $font_size
+
+
   .burger
     display: none
 
 @media screen and (min-width: 801px) and (max-width: 1024px)
-  
-  .burger
+  .header
+    & .logo
+      padding: 2.5em 0 0 2.5em
+      width: 50%
+      & .name_company
+        font-size: 3.5 * $font_size
+        padding-top: 0
+      & .name_company_slogan
+        font-size: 0.815 * $font_size
+    & .navigation
+      width: 48%
+      & .navigation_desktop
+        & ul li
+          font-size: 1.2em
+          padding: 0 .3em
+          margin-right: 1.3em
+
+  .main
+    & .main_description
+      & .main_description_name
+        font-size: 3 * $font_size
+        margin: .8em auto
+      & img
+        width: 80%
+        height: auto
+      & .main_description_info
+        & .main_description_info_recourse
+          font-size: 2 * $font_size
+      & .main_description_info_description,
+      & ul
+        font-size: 1.3 * $font_size
+    & .main_description_examples
+      & .main_description_examples_name
+        font-size: 2.5em
+      
+  .main_description_info_description
+    font-size: 1.3 * $font_size
+
+  .footer
+    & .footer_common
+      & .footer_common_offer
+        font-size: .9 * $font_size
+      & .footer_common_form,
+      & .footer_common_newsletter
+        font-size: $font_size
+       
+  .nav_burger
     display: none
 
 @media screen and (min-width: 1025px)
-  
+  .container
+    width: 1000px
+    & .main_description img
+      height: 330px
+      width: 750px
+
   .burger
     display: none
 
+  
 
+@import "../pages/main/burger_menu/burger_menu"
+@import "../pages/main/slider/slider"
+@import "../pages/main/button/button"
+@import "../pages/main/form/thank"
+@import "../pages/main/form/forms"

@@ -24,7 +24,7 @@ let gulp = require('gulp'),
   });
   
   gulp.task('html', function () {
-    gulp.src(['./app/index.html'], ['./app/thank_form.html'], ['./app/thank_newsletter.html']) //все файлы html
+    gulp.src(['./app/index.html', './app/thank_form.html', './app/thank_newsletter.html']) //все файлы html
       .pipe(rigger())
       .pipe(htmlMin({ //сжимаем
         collapseWhitespace: true //удаляем пробелы
@@ -108,7 +108,7 @@ let gulp = require('gulp'),
   });
   
   gulp.task('watchFiles', function () {
-    gulp.watch(['./app/**/index.html'], ['html']);
+    gulp.watch(['./app/**/*.html'], ['html']);
     gulp.watch(['./app/sass/main.sass'], ['sass']);
     gulp.watch(['./app/js/main.js'], ['js']);
     gulp.watch('./app/img/*', ['imageMin']);

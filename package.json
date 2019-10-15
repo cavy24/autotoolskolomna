@@ -17,9 +17,7 @@
     "auto",
     "special",
     "set",
-    "tools",
-    "pneumatics",
-    "hydraulics"
+    "tools"
   ],
   "author": "Elena V.",
   "license": "ISC",

@@ -1,3 +1,4 @@
+function burgerMenu() {
 let burger = document.getElementById('burger-button');
   let navBurger =  document.getElementById('nav-burger');
   burger.addEventListener('click', (event) => {
@@ -5,3 +6,4 @@ let burger = document.getElementById('burger-button');
     navBurger.classList.toggle('open');
     burger.classList.toggle('open');
 });
+};

@@ -10,15 +10,36 @@
     box-shadow: $box_shadow_inset
   
 .btn_main
-  background: url(../img/bg_btn.png) no-repeat center
-  background-size: cover
+  background: rgb(37,93,172)
   border-color: $main_color_white
   margin-top: 1em
   color: $main_color_white
+  &:hover
+    color: darken($color_hover, 20%)
+    border-color: $color_hover
+  &:active
+    color: $color_active
+    border-color: $color_active
  
 .btn_footer
   background-color: rgb( 231, 232, 234 )
   color: $bg_color_form
-  font-weight: 600 
+  font-weight: 600
+
+#btn_footer_newsletter
+    margin-top: .25em
+
+@media screen and (min-width: 641px) and (max-width: 800px)
+
+  .btn_main,
+  .btn_footer
+    font-size: 1.2 * $font_size
+
+@media screen and (min-width: 801px) and (max-width: 1024px)
+
+  .btn_main,
+  .btn_footer
+    font-size: 1.4 * $font_size
+
 
   
